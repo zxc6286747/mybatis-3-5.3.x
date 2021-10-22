@@ -127,7 +127,7 @@ public class DefaultSqlSessionFactory implements SqlSessionFactory {
        */
       final Executor executor = configuration.newExecutor(tx, execType);
       /**
-       * 创建返回一个DeaultSqlSessoin对象返回
+       * 创建返回一个DefaultSqlSession对象返回
        */
       return new DefaultSqlSession(configuration, executor, autoCommit);
     } catch (Exception e) {

@@ -68,9 +68,7 @@ public class TestXml {
         // 5  node表示一个节点
         Node node = (Node) xPath.evaluate("/configuration", document, XPathConstants.NODE);
 
-        Node node2 = (Node)  xPath.evaluate("properties", node, XPathConstants.NODE);
         System.out.println(toStringNode(node));
-        System.out.println(toStringNode(node2));
     }
 
 

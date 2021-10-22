@@ -5,6 +5,7 @@
     <!--properties 扫描属性文件.properties  -->
     <properties resource="db.properties"></properties>
 
+
     <plugins>
         <plugin interceptor="com.tuling.plugins.ExamplePlugin" ></plugin>
     </plugins>
@@ -23,7 +24,6 @@
     <mappers>
         <mapper resource="com/tuling/mapper/UserMapper.xml"/>
         <!--<package name="com.tuling.mapper"/>-->
-
     </mappers>
 </configuration>
 

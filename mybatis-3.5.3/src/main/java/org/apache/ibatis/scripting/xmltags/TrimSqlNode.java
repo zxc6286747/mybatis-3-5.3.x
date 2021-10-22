@@ -54,6 +54,7 @@ public class TrimSqlNode implements SqlNode {
     FilteredDynamicContext filteredDynamicContext = new FilteredDynamicContext(context);
     // 递归trim(where\set) 中的内容
     boolean result = contents.apply(filteredDynamicContext);
+    // 去除、追加前缀后缀
     filteredDynamicContext.applyAll();
     return result;
   }

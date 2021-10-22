@@ -179,6 +179,8 @@ public class DefaultSqlSession implements SqlSession {
     try {
       /**
        * 第一步：通过我们的statement去我们的全局配置类中获取MappedStatement
+       *
+       * CRUD
        */
       MappedStatement ms = configuration.getMappedStatement(statement);
       /**

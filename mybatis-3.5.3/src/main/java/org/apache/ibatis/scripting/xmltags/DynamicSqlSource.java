@@ -47,8 +47,8 @@ public class DynamicSqlSource implements SqlSource {
     rootSqlNode.apply(context);
     SqlSourceBuilder sqlSourceParser = new SqlSourceBuilder(configuration);
     // 2.接下来处理 处理sql中的#{...}
-    // 怎么处理呢？ 很简单， 就是拿到#{}中的内容 封装为parameterMapper，  替换成?
     Class<?> parameterType = parameterObject == null ? Object.class : parameterObject.getClass();
+    // 怎么处理呢？ 很简单， 就是拿到#{}中的内容 封装为parameterMapper，  替换成?
     SqlSource sqlSource = sqlSourceParser.parse(context.getSql(), parameterType, context.getBindings());
     BoundSql boundSql = sqlSource.getBoundSql(parameterObject);
     context.getBindings().forEach(boundSql::setAdditionalParameter);

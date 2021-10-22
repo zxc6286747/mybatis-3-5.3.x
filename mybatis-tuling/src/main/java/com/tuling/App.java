@@ -20,15 +20,15 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws IOException {
         String resource = "mybatis-config.xml";
-        //将XML配置文件构建为Configuration配置类  1
+        //将XML配置文件构建为Configuration配置类
         Reader reader = Resources.getResourceAsReader(resource);
-        // 通过加载配置文件流构建一个SqlSessionFactory   解析xml文件  2
+        // 通过加载配置文件流构建一个SqlSessionFactory   解析xml文件  1
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 
-        // 数据源 执行器  DefaultSqlSession 3
+        // 数据源 执行器  DefaultSqlSession 2
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            // 执行查询 底层执行jdbc 4
+            // 执行查询 底层执行jdbc 3
             User user =  session.selectOne("com.tuling.mapper.UserMapper.selectById", 1);
 
             // 创建动态代理
@@ -37,8 +37,10 @@ public class App {
             User user = mapper.selectById(1);*/
             System.out.println(user.getUserName());
 
+            session.commit();
         } catch (Exception e) {
             e.printStackTrace();
+            session.rollback();
         } finally {
             session.close();
         }

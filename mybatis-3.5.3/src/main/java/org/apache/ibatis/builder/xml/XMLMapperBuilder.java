@@ -109,7 +109,7 @@ public class XMLMapperBuilder extends BaseBuilder {
       /**
        * 把资源保存到我们Configuration中
        */
-      configuration.addLoadedResource(resource);
+        configuration.addLoadedResource(resource);
 
       bindMapperForNamespace();
     }

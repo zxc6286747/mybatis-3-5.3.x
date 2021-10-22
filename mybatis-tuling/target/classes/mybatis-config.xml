@@ -9,9 +9,11 @@
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
-<!--   <plugins>
+
+   <plugins>
        <plugin interceptor="com.tuling.plugins.ExamplePlugin" ></plugin>
-    </plugins>-->
+    </plugins>
+
     <environments default="development">
         <environment id="development">
            <transactionManager type="JDBC"/>
@@ -28,7 +30,18 @@
 
 
     <mappers>
+        <!--1.必须保证接口名（例如IUserDao）和xml名（IUserDao.xml）相同，还必须在同一个包中-->
         <package name="com.tuling.mapper"/>
+
+        <!--2.不用保证同接口同包同名
+         <mapper resource="com/mybatis/mappers/EmployeeMapper.xml"/>
+
+        3.保证接口名（例如IUserDao）和xml名（IUserDao.xml）相同，还必须在同一个包中
+        <mapper class="com.mybatis.dao.EmployeeMapper"/>
+
+        4.不推荐:引用网路路径或者磁盘路径下的sql映射文件 file:///var/mappers/AuthorMapper.xml
+         <mapper url="file:E:/Study/myeclipse/_03_Test/src/cn/sdut/pojo/PersonMapper.xml"/>-->
+
     </mappers>
 </configuration>
 

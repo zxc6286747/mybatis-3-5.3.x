@@ -42,7 +42,7 @@ public class TestJDBC {
 
             rs.next();
             User user =new User();
-            user.setId(rs.getLong("id"));
+            user.setId(rs.getInt("id"));
             user.setUserName(rs.getString("user_name"));
             user.setCreateTime(rs.getDate("create_time"));
             System.out.println(user.toString());
@@ -117,7 +117,7 @@ public class TestJDBC {
 
                     rs.next();
                     User user = new User();
-                    user.setId(rs.getLong("id"));
+                    user.setId(rs.getInt("id"));
                     user.setUserName(rs.getString("user_name"));
                     user.setCreateTime(rs.getDate("create_time"));
                     System.out.println(user.toString());
@@ -135,7 +135,7 @@ public class TestJDBC {
 
                     rs.next();
                     User user = new User();
-                    user.setId(rs.getLong("id"));
+                    user.setId(rs.getInt("id"));
                     user.setUserName(rs.getString("user_name"));
                     user.setCreateTime(rs.getDate("create_time"));
                     System.out.println(user.toString());

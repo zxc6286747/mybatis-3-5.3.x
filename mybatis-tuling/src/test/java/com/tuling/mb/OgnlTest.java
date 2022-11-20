@@ -19,7 +19,7 @@ public class OgnlTest {
         ExpressionEvaluator expressionEvaluator = new ExpressionEvaluator();
 
         User user = new User();
-        user.setId(1L);
+        user.setId(1);
         user.setUserName(null);
 
         boolean b = expressionEvaluator.evaluateBoolean("id>0 and username!=null", user);

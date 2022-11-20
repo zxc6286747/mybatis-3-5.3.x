@@ -29,12 +29,12 @@ public class App {
         SqlSession session = sqlSessionFactory.openSession();
         try {
             // 执行查询 底层执行jdbc 3
-            User user =  session.selectOne("com.tuling.mapper.UserMapper.selectById", 1);
+//            User user =  session.selectOne("com.tuling.mapper.UserMapper.selectById", 1);
 
             // 创建动态代理
-           /* UserMapper mapper = session.getMapper(UserMapper.class);
+            UserMapper mapper = session.getMapper(UserMapper.class);
             System.out.println(mapper.getClass());
-            User user = mapper.selectById(1);*/
+            User user = mapper.selectById(1);
             System.out.println(user.getUserName());
 
             session.commit();
